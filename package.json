@@ -1,0 +1,15 @@
+{
+  "name": "future-land",
+  "private": true,
+  "scripts": {
+    "css:build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/site.css --minify",
+    "css:watch": "tailwindcss -i ./assets/css/input.css -o ./assets/css/site.css --watch"
+  },
+  "dependencies": {
+    "gsap": "3.13.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "tailwindcss": "^4.1.12"
+  }
+}
