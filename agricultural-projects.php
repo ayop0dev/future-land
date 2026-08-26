@@ -11,13 +11,14 @@ $project = [
   'hero' => 'assets/images/agri-hero.png',
   'opportunityTitle' => 'A long-term agricultural opportunity shaped around scale, access, and future growth.',
   'about' => 'Future Land currently develops two agricultural sites. The first is in Wadi El Natrun, on sandy soil, 80% reclaimed, irrigated from available wells and located two kilometres from the Wadi El Natrun to El Alamein road. The second is on El Dabaa Road (before El Mohra), on clay soil, fully reclaimed, with surface irrigation and available water, close to the main routes. Both sites carry full utilities including drinking water and electricity, and complete legal documentation.',
+  'aboutMobile' => 'Future Land develops two agricultural sites: Wadi El Natrun (sandy soil, 80% reclaimed, well irrigation, and 2 km from the main road) and El Dabaa Road before El Mohra (clay soil, fully reclaimed, and surface irrigation). Both have water, electricity, and complete legal documentation.',
   'suitableCrops' => 'Olives, Grapes, Figs, Onions, Garlic, Citrus, and any greenhouse-cultivated crops.',
   'facts' => [['Project sites', '2 Locations'], ['Minimum lease', '10 Feddans'], ['Availability', 'Available now']],
   'secondary' => ['assets/images/agri-hero.png', 'assets/images/agri-secondary.png'],
   'secondaryAlt' => ['Wadi El Natrun agricultural site', 'El Dabaa Road agricultural site'],
   'sites' => [
-    ['number' => 'Project 01', 'name' => 'Wadi El Natrun', 'link' => 'https://maps.app.goo.gl/vw4UDUp5UZyMftQ19', 'facts' => ['Soil' => 'Sandy soil', 'Reclamation' => '80%', 'Irrigation' => 'Wells, available', 'Access' => '2 km from the Wadi El Natrun to El Alamein road', 'Minimum lease' => '10 feddans', 'Availability' => 'Available now']],
-    ['number' => 'Project 02', 'name' => 'El Dabaa Road (Before El Mohra)', 'facts' => ['Soil' => 'Clay soil', 'Reclamation' => '100%', 'Irrigation' => 'Surface irrigation, water available', 'Access' => 'Close to main routes', 'Minimum lease' => '10 feddans', 'Availability' => 'Available now']]
+    ['number' => 'Project 01', 'name' => 'Wadi El Natrun', 'link' => 'https://maps.app.goo.gl/vw4UDUp5UZyMftQ19', 'facts' => ['Soil' => 'Sandy soil', 'Reclamation' => '80%', 'Irrigation' => 'Wells, with water available', 'Access' => '2 km from Wadi El Natrun–El Alamein Road', 'Minimum lease' => '10 feddans', 'Status' => 'Available now']],
+    ['number' => 'Project 02', 'name' => 'El Dabaa Road (Before El Mohra)', 'facts' => ['Soil' => 'Clay soil', 'Reclamation' => 'Fully reclaimed', 'Irrigation' => 'Surface irrigation, with water available', 'Access' => 'Close to the main routes', 'Minimum lease' => '10 feddans', 'Status' => 'Available now']]
   ],
   'gallery' => [],
   'detailsIntro' => 'The essential information that every investor asks about: soil, water, access, road proximity and the terms of use.',

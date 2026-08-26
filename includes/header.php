@@ -11,7 +11,7 @@ $pageClass = $pageClass ?? $activePage;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES) ?>">
   <title><?= htmlspecialchars($pageTitle, ENT_QUOTES) ?></title>
-  <link rel="preload" href="assets/fonts/TS-Safaa-Regular.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="assets/fonts/TSSafaa-Regular.otf" as="font" type="font/otf" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
   <script defer src="assets/js/vendor/gsap.min.js"></script>
   <script defer src="assets/js/vendor/ScrollTrigger.min.js"></script>
@@ -34,7 +34,7 @@ $pageClass = $pageClass ?? $activePage;
         <span class="language-switch" aria-label="Language">EN <i>|</i> ع</span>
       </nav>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
-        <span></span><span></span><span></span><span class="sr-only">Open menu</span>
+        <img src="assets/images/menu-icon.svg" alt=""><span class="sr-only">Open menu</span>
       </button>
     </div>
   </header>

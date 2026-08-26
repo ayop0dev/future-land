@@ -15,16 +15,15 @@
       </div>
       <div class="footer-column footer-contact">
         <p class="eyebrow footer-label">Contact</p>
-        <p>Shebin El-Kom, Talaat Harb Street, Menoufia, Egypt</p>
-        <a href="https://wa.me/201140644448">WhatsApp: 01140644448</a>
+        <p>Shebin El-Kom, Talaat Harb St., Menoufia</p>
         <p>Sun to Thu, 9:00 AM to 5:00 PM</p>
-        <p>Closed Friday and Saturday</p>
+        <a href="tel:+201140644448">01140644448</a>
       </div>
     </div>
     <div class="footer-bottom page-shell">
       <div><a href="#">LinkedIn</a><a href="#">Facebook</a><a href="#">Instagram</a></div>
-      <p>© 2026 Future Land. All rights reserved</p>
-      <div><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><span>AR&nbsp; / &nbsp;EN</span></div>
+      <p>© 2026 Future Land. All rights reserved.</p>
+      <div><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><span>EN&nbsp; | &nbsp;ع</span></div>
     </div>
   </footer>
 </body>
