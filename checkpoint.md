@@ -92,6 +92,11 @@ The previous CSS referenced non-existent `TS-Safaa-*.otf` filenames and mapped w
 - Moved project facilities gallery image choices into project data via `facilityGallery`, with a safe fallback to available facility images.
 - Corrected Fuel Station mobile facts stacking and facilities gallery image mapping.
 - Corrected Contact mobile background crop positioning and submit button font weight.
+- Implemented the Agricultural mobile Figma frame refinements for padded project sections, intended gallery imagery, and content-safe section heights.
+- Applied the same mobile hero CTA alignment and normal-weight CTA typography corrections to Fuel Station.
+- Corrected the mobile menu footer spacing and close-icon sizing so the lower controls no longer conflict with the navigation list.
+- Restored the shared mobile footer-bottom layout to the Figma-aligned left gutter across all pages.
+- Normalized button-like typography to regular weight across desktop and mobile, including shared `.button`, form buttons, FAQ toggles, and the Homepage story CTA.
 
 ## Exact Mobile Section Heights Implemented
 
@@ -137,6 +142,9 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Horizontal overflow regression passed at 320, 360, 375, 390, 412, 430, and 440px for all five routes with the mobile menu closed and open.
 - GSAP mobile state safety passed: mobile reveal/parallax disables at `max-width: 560px` without leaving reveal elements hidden or transformed.
 - Generated CSS integrity passed: `assets/css/site.css` was rebuilt from `assets/css/input.css`; generated CSS was not manually patched independently.
+- Post-audit CSS build passed after the Agricultural/Fuel mobile refinements, shared footer alignment, and button-weight sweep.
+- Browser computed-style checks confirmed representative mobile and desktop button-like controls render at font weight `400`.
+- Browser checks confirmed shared mobile footer-bottom alignment uses the 24px gutter and does not create horizontal overflow at 475px or 320px.
 
 ## Git and GitHub Status
 
@@ -150,7 +158,7 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Pushed `main` successfully and set it to track `origin/main`.
 - Verified that the local and remote `main` branches point to the same commit.
 - The first HTTPS upload was reset by the connection; forcing Git to HTTP/1.1 allowed the retry to complete. The repository-local `http.version` remains set to `HTTP/1.1`.
-- Current pending work before the next push: accepted mobile parity and sanity-check updates in `index.php`, `agricultural-projects.php`, `fuel-station-project.php`, `includes/project-layout.php`, `assets/css/input.css`, `assets/css/site.css`, and `assets/js/site.js`.
+- Current pending work before the next push: post-acceptance mobile refinements in `agricultural-projects.php`, `includes/project-layout.php`, `assets/css/input.css`, `assets/css/site.css`, and new Figma-derived image assets under `assets/images/figma`.
 
 Repository:
 

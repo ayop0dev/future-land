@@ -54,7 +54,7 @@ require __DIR__ . '/header.php';
 
 <section class="project-gallery muted-section" aria-label="Project gallery">
   <div class="page-shell project-gallery__grid" data-reveal>
-    <?php $galleryImages = $isAgricultural ? [$project['facilities'][0][2], $project['facilities'][1][2], $project['facilities'][2][2]] : $project['gallery']; ?>
+    <?php $galleryImages = !empty($project['gallery']) ? $project['gallery'] : ($isAgricultural ? [$project['facilities'][0][2], $project['facilities'][1][2], $project['facilities'][2][2]] : []); ?>
     <?php foreach ($galleryImages as $index => $image): ?><img src="<?= htmlspecialchars($image, ENT_QUOTES) ?>" alt="<?= htmlspecialchars($project['title']) ?> view <?= $index + 1 ?>"><?php endforeach; ?>
   </div>
 </section>
@@ -73,6 +73,9 @@ require __DIR__ . '/header.php';
   <div class="page-shell project-facility-gallery__grid" data-reveal>
     <?php
       $facilityGallery = [];
+      foreach (($project['facilityGalleryImages'] ?? []) as $image) {
+        $facilityGallery[] = [$project['title'], '', $image];
+      }
       foreach (($project['facilityGallery'] ?? []) as $facilityIndex) {
         if (isset($project['facilities'][$facilityIndex][2])) {
           $facilityGallery[] = $project['facilities'][$facilityIndex];

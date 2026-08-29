@@ -17,10 +17,10 @@ $project = [
   'secondary' => ['assets/images/agri-hero.png', 'assets/images/agri-secondary.png'],
   'secondaryAlt' => ['Wadi El Natrun agricultural site', 'El Dabaa Road agricultural site'],
   'sites' => [
-    ['number' => 'Project 01', 'name' => 'Wadi El Natrun', 'link' => 'https://maps.app.goo.gl/vw4UDUp5UZyMftQ19', 'facts' => ['Soil' => 'Sandy soil', 'Reclamation' => '80%', 'Irrigation' => 'Wells, with water available', 'Access' => '2 km from Wadi El Natrun–El Alamein Road', 'Minimum lease' => '10 feddans', 'Status' => 'Available now']],
-    ['number' => 'Project 02', 'name' => 'El Dabaa Road (Before El Mohra)', 'facts' => ['Soil' => 'Clay soil', 'Reclamation' => 'Fully reclaimed', 'Irrigation' => 'Surface irrigation, with water available', 'Access' => 'Close to the main routes', 'Minimum lease' => '10 feddans', 'Status' => 'Available now']]
+    ['number' => 'Project 01', 'name' => 'Wadi El Natrun', 'link' => 'https://maps.app.goo.gl/vw4UDUp5UZyMftQ19', 'facts' => ['Soil' => 'Sandy soil', 'Reclamation' => '80%', 'Irrigation' => 'Wells, water available', 'Access' => '2 km from the main road', 'Minimum lease' => '10 feddans', 'Status' => 'Available now']],
+    ['number' => 'Project 02', 'name' => 'El Dabaa Road (Before El Mohra)', 'facts' => ['Soil' => 'Clay soil', 'Reclamation' => 'Fully reclaimed', 'Irrigation' => 'Surface irrigation', 'Access' => 'Close to the main routes', 'Minimum lease' => '10 feddans', 'Status' => 'Available now']]
   ],
-  'gallery' => [],
+  'gallery' => ['assets/images/figma/agri-project-gallery-large.png', 'assets/images/figma/agri-project-gallery-small-left.png', 'assets/images/figma/agri-project-gallery-small-right.png'],
   'detailsIntro' => 'The essential information that every investor asks about: soil, water, access, road proximity and the terms of use.',
   'details' => [
     ['Land Specifications', 'Wadi El Natrun is sandy soil at 80% reclamation. El Dabaa Road is clay soil, fully reclaimed. Both are prepared for immediate agricultural use.'],
@@ -36,7 +36,7 @@ $project = [
     ['Electricity & Utilities', 'Electricity and drinking water are connected across both projects.', 'assets/images/agri-facility-3.png'],
     ['Legal & Service Support', 'Complete documentation and a team available to answer operational questions during the lease.', 'assets/images/agri-facility-4.png']
   ],
-  'facilityGallery' => [2, 3],
+  'facilityGalleryImages' => ['assets/images/agri-facility-3.png', 'assets/images/figma/agri-facilities-gallery-right.png'],
   'faqs' => [
     ['What is the minimum area I can lease?', 'Leasing starts from a minimum of 10 feddans. A single party may lease up to 50% of the total site area.'],
     ['Is water available on site?', 'Yes. Wadi El Natrun is served by available wells, and El Dabaa Road uses surface irrigation with water available.'],
