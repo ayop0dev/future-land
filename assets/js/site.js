@@ -5,18 +5,25 @@
   const closeButton = document.querySelector('[data-menu-close]');
   const projectToggle = document.querySelector('[data-projects-toggle]');
   const projectMenu = document.querySelector('[data-projects-menu]');
+  let menuReturnFocus = null;
 
   const setMenu = (open) => {
     if (!menu || !openButton) return;
+    if (open) menuReturnFocus = document.activeElement;
     menu.classList.toggle('is-open', open);
     menu.setAttribute('aria-hidden', String(!open));
     openButton.setAttribute('aria-expanded', String(open));
     document.body.classList.toggle('menu-open', open);
+    if (open) requestAnimationFrame(() => closeButton?.focus());
+    else if (menuReturnFocus instanceof HTMLElement) menuReturnFocus.focus();
   };
 
   openButton?.addEventListener('click', () => setMenu(true));
   closeButton?.addEventListener('click', () => setMenu(false));
   menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu?.classList.contains('is-open')) setMenu(false);
+  });
 
   projectToggle?.addEventListener('click', () => {
     const open = projectToggle.getAttribute('aria-expanded') === 'true';

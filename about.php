@@ -25,7 +25,7 @@ require __DIR__ . '/includes/header.php';
         <h2 class="section-title">A focused group creating real opportunities for growth.</h2>
       </div>
       <p class="lead">Future Land was established in 2017 as an Egyptian joint stock company specialising in land reclamation and real estate development. We work across two connected tracks: reclaiming and preparing agricultural land, and developing commercial spaces that businesses can operate from. Our clients are business owners looking for a site to run an activity, and end users looking for land and space they can put to work. Today we operate across Lower Egypt, with expansion into additional governorates under planning.</p>
-      <a class="button" href="#opportunities"><span>Explore our opportunities</span><img src="assets/images/arrow-up-right-green.svg" alt=""></a>
+      <a class="button button--ghost-brand" href="#opportunities"><span>Explore our opportunities</span><img src="assets/images/arrow-up-right-green.svg" alt=""></a>
     </div>
   </div>
 </section>
@@ -56,7 +56,7 @@ require __DIR__ . '/includes/header.php';
   <div class="page-shell">
     <div class="section-heading" data-reveal><div><p class="eyebrow text-brand">Our principles</p><h2 class="section-title mt-6">The standards behind every opportunity we develop.</h2></div><p class="lead">We focus on clarity, practicality, long-term value, and responsible growth at every stage.</p></div>
     <div class="principles">
-      <article class="principle" data-reveal><img src="assets/images/about-principle-1.png" alt="Commitment"><div><span>01</span><h3>Commitment</h3><p>We hold to the agreed timeline and quality standard. That commitment is the first thing we are judged on.</p></div></article>
+      <article class="principle" data-reveal><img src="assets/images/about-principle-1.png" alt="Commitment"><div><span>01</span><h3>Commitment</h3><p>We hold to the agreed timeline and the agreed quality standard. That commitment is the first thing we are judged on.</p></div></article>
       <article class="principle" data-reveal><img src="assets/images/about-principle-2.png" alt="Professional standards"><div><span>02</span><h3>Professional Standards</h3><p>We work to high professional benchmarks and apply modern technology across development and delivery.</p></div></article>
       <article class="principle" data-reveal><img src="assets/images/about-principle-3.png" alt="Practical opportunities"><div><span>03</span><h3>Practical Opportunities</h3><p>Real, actionable opportunities instead of broad promises. What we publish is what is available.</p></div></article>
       <article class="principle" data-reveal><img src="assets/images/about-principle-4.png" alt="Project diversity"><div><span>04</span><h3>Diversity of Projects</h3><p>A varied portfolio across agricultural and commercial development, so we are not tied to a single model.</p></div></article>

@@ -16,6 +16,9 @@ checkpoint.md
 *.temp
 tmp/
 temp/
+.codex-parity/
+.playwright-mcp/
+future-land-home-1440.png
 
 # Editor settings
 .idea/
