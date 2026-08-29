@@ -36,6 +36,7 @@ $project = [
     ['Electricity & Utilities', 'Electricity and drinking water are connected across both projects.', 'assets/images/agri-facility-3.png'],
     ['Legal & Service Support', 'Complete documentation and a team available to answer operational questions during the lease.', 'assets/images/agri-facility-4.png']
   ],
+  'facilityGallery' => [2, 3],
   'faqs' => [
     ['What is the minimum area I can lease?', 'Leasing starts from a minimum of 10 feddans. A single party may lease up to 50% of the total site area.'],
     ['Is water available on site?', 'Yes. Wadi El Natrun is served by available wells, and El Dabaa Road uses surface irrigation with water available.'],
@@ -44,7 +45,7 @@ $project = [
     ['What are the lease duration and terms?', 'Duration and terms are agreed according to the area and the intended activity. Contact our team to discuss the details.'],
     ['Is the land available now?', 'Yes, both sites are available.']
   ],
-  'cta' => 'assets/images/agri-cta.png',
+  'cta' => 'assets/images/agri-hero.png',
   'ctaCopy' => 'Send us your area and the activity you have in mind, and we will get back to you with the available details.'
 ];
 require __DIR__ . '/includes/project-layout.php';

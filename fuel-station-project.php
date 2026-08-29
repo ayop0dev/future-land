@@ -5,7 +5,9 @@ $activePage = 'projects';
 $pageClass = 'fuel';
 $project = [
   'interest' => 'Fuel Station Project', 'type' => 'Commercial opportunity', 'eyebrow' => 'Our Commercial Project',
-  'title' => 'Wataneya Fuel Station, Sadat City', 'location' => 'Sadat City, main road',
+  'title' => 'Wataneya Fuel Station, Sadat City',
+  'titleLines' => ['Wataneya Fuel', 'Station,', 'Sadat City'],
+  'location' => 'Sadat City, main road',
   'summary' => 'Eight commercial units on a main road in Sadat City, available for lease within an operating fuel station, with full utilities and 24-hour operation.',
   'locationLink' => 'https://maps.app.goo.gl/NR13FQJ5zmwBfthY6',
   'hero' => 'assets/images/fuel-hero.png',
@@ -31,6 +33,7 @@ $project = [
     ['Entrances, Exits and Parking', 'Vehicle circulation, access points and parking areas are planned for constant flow.', 'assets/images/fuel-facility-3.png'],
     ['24-Hour Operation', 'The station operates around the clock, extending trading hours for tenants.', 'assets/images/fuel-gallery-tall.png']
   ],
+  'facilityGallery' => [1, 2],
   'faqs' => [
     ['What unit sizes are available?', 'Six units measure 60 m², one unit measures 492 m², and one unit measures 360 m².'],
     ['Are the units for sale or for lease?', 'Lease only.'],

@@ -7,7 +7,7 @@ require __DIR__ . '/header.php';
   <img class="hero__media" src="<?= htmlspecialchars($project['hero'], ENT_QUOTES) ?>" alt="<?= htmlspecialchars($project['title'], ENT_QUOTES) ?>">
   <div class="hero__overlay"></div>
   <div class="hero__content page-shell">
-    <h1 class="display" data-hero-reveal><?= htmlspecialchars($project['title']) ?></h1>
+    <h1 class="display" data-hero-reveal><?php if (!empty($project['titleLines'])): ?><?php foreach ($project['titleLines'] as $line): ?><span><?= htmlspecialchars($line) ?></span> <?php endforeach; ?><?php else: ?><?= htmlspecialchars($project['title']) ?><?php endif; ?></h1>
     <p class="lead" data-hero-reveal><?= htmlspecialchars($project['location']) ?></p>
     <?php if (!$isAgricultural): ?><p class="project-hero__summary" data-hero-reveal><?= htmlspecialchars($project['summary']) ?></p><?php endif; ?>
     <div class="hero__actions" data-hero-reveal>
@@ -71,8 +71,19 @@ require __DIR__ . '/header.php';
 
 <section class="project-facility-gallery bg-white" aria-label="Facilities gallery">
   <div class="page-shell project-facility-gallery__grid" data-reveal>
-    <img src="<?= htmlspecialchars($project['facilities'][2][2], ENT_QUOTES) ?>" alt="<?= htmlspecialchars($project['facilities'][2][0]) ?>">
-    <img src="<?= htmlspecialchars($project['facilities'][3][2], ENT_QUOTES) ?>" alt="<?= htmlspecialchars($project['facilities'][3][0]) ?>">
+    <?php
+      $facilityGallery = [];
+      foreach (($project['facilityGallery'] ?? []) as $facilityIndex) {
+        if (isset($project['facilities'][$facilityIndex][2])) {
+          $facilityGallery[] = $project['facilities'][$facilityIndex];
+        }
+      }
+      if (!$facilityGallery) {
+        $facilityGallery = array_values(array_filter($project['facilities'] ?? [], fn($facility) => !empty($facility[2])));
+      }
+      $facilityGallery = array_slice($facilityGallery, 0, 2);
+    ?>
+    <?php foreach ($facilityGallery as $facilityImage): ?><img src="<?= htmlspecialchars($facilityImage[2], ENT_QUOTES) ?>" alt="<?= htmlspecialchars($facilityImage[0]) ?>"><?php endforeach; ?>
   </div>
 </section>
 

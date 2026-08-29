@@ -10,7 +10,7 @@ require __DIR__ . '/includes/header.php';
   <div class="hero__overlay"></div>
   <div class="hero__content page-shell">
     <p class="eyebrow mb-6" data-hero-reveal>Future Land</p>
-    <h1 class="display" data-hero-reveal>Land and spaces ready for real business<span class="hero-title-period">.</span></h1>
+    <h1 class="display" data-hero-reveal><span>Land and</span> <span>spaces</span> <span>ready for real</span> <span>business<span class="hero-title-period">.</span></span></h1>
     <p class="lead" data-hero-reveal>An Egyptian joint stock company working in land reclamation and real estate development, creating agricultural and commercial opportunities for business owners and end users.</p>
     <div class="hero__actions" data-hero-reveal>
       <a class="button" href="#projects">Explore our opportunities <img src="assets/images/arrow-up-right.svg" alt=""></a>

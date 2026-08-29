@@ -60,7 +60,7 @@
     });
   });
 
-  if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce), (max-width: 560px)').matches) return;
   gsap.registerPlugin(ScrollTrigger);
   gsap.from('[data-hero-reveal]', { opacity: 0, y: 28, duration: 1, stagger: 0.11, ease: 'power4.out' });
   gsap.utils.toArray('[data-reveal]').forEach((element) => {
