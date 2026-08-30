@@ -1408,6 +1408,10 @@ img { display: block; max-width: 100%; }
   .home-about__story-link, .page-home .hero__actions .button:first-child { width: 100%; }
   .home-enquiry { overflow: hidden; }
   .about-who__copy .button { width: min(306px, 100%); }
+  .about-who__grid { row-gap: 32px; }
+  .about-vision .section-heading,
+  .about-values .section-heading,
+  .about-principles .section-heading { margin-bottom: 36px; }
   .home-features .feature-grid, .about-values .value-list, .project-facilities .facility-grid { grid-template-columns: 1fr; }
   .home-projects .project-cards { grid-template-columns: 1fr; }
   .project-intro-gallery__grid, .project-gallery__grid, .project-facility-gallery__grid { width: 100%; }
@@ -1721,6 +1725,13 @@ img { display: block; max-width: 100%; }
 
   .about-who__grid {
     grid-template-rows: auto auto auto auto;
+    row-gap: var(--space-xl);
+  }
+
+  .about-vision .section-heading,
+  .about-values .section-heading,
+  .about-principles .section-heading {
+    margin-bottom: var(--space-xl);
   }
 
   .about-who__image {
