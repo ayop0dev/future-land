@@ -1,6 +1,6 @@
 # Future Land — Implementation Checkpoint
 
-Last updated: 30 August 2026
+Last updated: 31 August 2026
 
 ## Objective
 
@@ -101,6 +101,9 @@ The previous CSS referenced non-existent `TS-Safaa-*.otf` filenames and mapped w
 - Fixed the remaining 320px horizontal overflow regression without adding global overflow masking.
 - Implemented continuous responsive interpolation for all existing pages between the approved 440px mobile and 1440px desktop Figma endpoints.
 - Added fluid shared container, section spacing, grid, media, project layout, About card, Homepage grid, Contact form, and CTA sizing rules for intermediate widths.
+- Added a small shared spacing scale (`--space-2xs` through `--space-5xl`) while preserving the approved mobile and desktop endpoint gutters.
+- Completed an extreme narrow-width layout stress pass from 160px upward, adding a structural `max-width: 319px` safety layer for gutters, heading wrapping, content-driven heights, single-column fallback grids, contained media, CTA/button wrapping, and Contact form field sizing.
+- Kept the approved 320px, 360px, 440px, and 1440px layouts intact while making sub-320px widths degrade safely without global horizontal overflow masking.
 
 ## Exact Mobile Section Heights Implemented
 
@@ -154,6 +157,9 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Full responsive validation passed for Homepage, About, Agricultural, Fuel Station, and Contact across 320, 440, 768, 1024, 1280, 1440, and breakpoint-adjacent/intermediate widths including 359, 360, 390, 400, 439, 560, 561, 767, 860, 900, 901, 1025, 1100, 1180, 1399, 1400, 1410, and 1439px.
 - Responsive validation confirmed no document horizontal overflow, no main-section width escapes, and no section-to-section collisions across the tested range.
 - Final runtime browser smoke checks passed for all five implemented routes with HTTP 200 responses and `0` console errors.
+- Narrow responsive stress validation passed for Homepage, About, Agricultural, Fuel Station, and Contact at 160, 180, 200, 240, 280, 320, 360, 440, and 1440px.
+- Continuous resize validation passed from 160px through the 1440px desktop endpoint, including breakpoint-adjacent widths 167, 319, 320, 359, 360, 439, 440, 560, 561, 767, 768, 900, 901, 1024, 1025, 1399, 1400, and 1439px.
+- The narrow stress pass confirmed `document.documentElement.scrollWidth <= document.documentElement.clientWidth`, no main-section overlap, and `0` console errors across all implemented routes.
 
 ## Git and GitHub Status
 
@@ -167,7 +173,7 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Pushed `main` successfully and set it to track `origin/main`.
 - Verified that the local and remote `main` branches point to the same commit.
 - The first HTTPS upload was reset by the connection; forcing Git to HTTP/1.1 allowed the retry to complete. The repository-local `http.version` remains set to `HTTP/1.1`.
-- Current pending work before this push: responsive interpolation updates in `assets/css/input.css` and `assets/css/site.css`, plus accepted shared Header/Footer/Mobile Navigation refinements in `includes/header.php` and `includes/footer.php`.
+- Latest pending work before this push: narrow responsive spacing/layout safety updates in `assets/css/input.css` and rebuilt `assets/css/site.css`.
 
 Repository:
 

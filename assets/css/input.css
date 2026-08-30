@@ -43,8 +43,18 @@
 }
 
 :root {
-  --page-pad: clamp(1.5rem, 4.45vw, 4rem);
-  --section-space: clamp(4rem, 8vw, 7.5rem);
+  --space-2xs: .5rem;
+  --space-xs: .75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 7.5rem;
+  --space-5xl: 10rem;
+  --page-pad: clamp(var(--space-md), 4.45vw, var(--space-2xl));
+  --section-space: clamp(var(--space-2xl), 8vw, var(--space-4xl));
   --green: #05332c;
   --deep-green: #03211d;
   --ink: #161f1d;
@@ -1463,7 +1473,7 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 319px) {
-  :root { --page-pad: clamp(10px, 6vw, 16px); }
+  :root { --page-pad: clamp(10px, 6vw, var(--space-sm)); }
 
   .page-shell,
   .site-header__inner,
@@ -1542,6 +1552,9 @@ img { display: block; max-width: 100%; }
     height: auto;
     min-height: 56px;
     align-items: center;
+    gap: var(--space-xs);
+    padding-inline: var(--space-xs);
+    overflow-wrap: anywhere;
   }
 
   .button img { flex: 0 0 24px; }
@@ -1598,13 +1611,27 @@ img { display: block; max-width: 100%; }
   }
 
   .hero__content,
+  .page-home .hero__content,
   .page-about .hero__content,
   .project-page__hero .hero__content {
     position: relative;
     left: auto;
     top: auto;
     bottom: auto;
-    padding: 160px 0 48px;
+    padding: var(--space-5xl) 0 var(--space-xl);
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-xs);
+    width: 100%;
+    height: auto;
+  }
+
+  .scroll-cue {
+    display: none;
   }
 
   .contact-hero,
@@ -1670,7 +1697,7 @@ img { display: block; max-width: 100%; }
     top: auto;
     width: calc(100% - (2 * var(--page-pad)));
     height: auto;
-    padding: 72px 0;
+    padding: var(--space-3xl) 0;
     transform: none;
   }
 
@@ -1741,6 +1768,26 @@ img { display: block; max-width: 100%; }
 
   .contact-layout > aside {
     margin-top: 0;
+  }
+
+  .contact-layout > div,
+  .contact-layout > aside {
+    height: auto;
+    padding-inline: var(--page-pad);
+  }
+
+  .contact-main .field,
+  .contact-main .field--wide,
+  .contact-main fieldset.field {
+    height: auto;
+    min-height: 0;
+  }
+
+  .contact-main .field input,
+  .contact-main .field select,
+  .contact-main .field textarea {
+    height: auto;
+    min-height: 35px;
   }
 
   .contact-main .field label,
