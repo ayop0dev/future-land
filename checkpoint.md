@@ -105,6 +105,7 @@ The previous CSS referenced non-existent `TS-Safaa-*.otf` filenames and mapped w
 - Completed an extreme narrow-width layout stress pass from 160px upward, adding a structural `max-width: 319px` safety layer for gutters, heading wrapping, content-driven heights, single-column fallback grids, contained media, CTA/button wrapping, and Contact form field sizing.
 - Kept the approved 320px, 360px, 440px, and 1440px layouts intact while making sub-320px widths degrade safely without global horizontal overflow masking.
 - Added a targeted About-page small-mobile spacing adjustment so the section headings and following image/card grids keep a clearer gap below 390px, with a stronger under-320px guard for wrapped headings.
+- Adjusted the Homepage enquiry section background so the desktop image remains centered and spans both viewport edges on widths above the 1440px Figma endpoint while preserving existing mobile and intermediate positioning.
 
 ## Exact Mobile Section Heights Implemented
 
@@ -162,6 +163,7 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Continuous resize validation passed from 160px through the 1440px desktop endpoint, including breakpoint-adjacent widths 167, 319, 320, 359, 360, 439, 440, 560, 561, 767, 768, 900, 901, 1024, 1025, 1399, 1400, and 1439px.
 - The narrow stress pass confirmed `document.documentElement.scrollWidth <= document.documentElement.clientWidth`, no main-section overlap, and `0` console errors across all implemented routes.
 - About-page small-mobile spacing validation passed at 280, 320, 360, 390, and 440px, with `0` console errors and no horizontal overflow. The approved 440px spacing remains unchanged.
+- Homepage enquiry background validation passed at 1440, 1600, and 1920px with the background spanning the viewport from both edges. Regression checks at 440, 1024, and 1280px passed with no horizontal overflow and `0` console errors.
 
 ## Git and GitHub Status
 
@@ -175,7 +177,7 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Pushed `main` successfully and set it to track `origin/main`.
 - Verified that the local and remote `main` branches point to the same commit.
 - The first HTTPS upload was reset by the connection; forcing Git to HTTP/1.1 allowed the retry to complete. The repository-local `http.version` remains set to `HTTP/1.1`.
-- Latest pending work before this push: About-page small-mobile heading-to-image spacing updates in `assets/css/input.css`, rebuilt `assets/css/site.css`, and this checkpoint update.
+- Latest pending work before this push: Homepage enquiry desktop background containment updates in `assets/css/input.css`, rebuilt `assets/css/site.css`, and this checkpoint update.
 
 Repository:
 
