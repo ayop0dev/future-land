@@ -29,8 +29,8 @@ $pageClass = $pageClass ?? $activePage;
         <a class="<?= $activePage === 'home' ? 'is-active' : '' ?>" href="index.php">Home</a>
         <a class="<?= $activePage === 'about' ? 'is-active' : '' ?>" href="about.php">About us</a>
         <a class="<?= $activePage === 'projects' ? 'is-active' : '' ?>" href="index.php#projects">Our projects</a>
-        <a href="agricultural-projects.php">Agricultural projects</a>
-        <a href="fuel-station-project.php">Fuel station project</a>
+        <a class="<?= ($activePage === 'agricultural' || ($activePage === 'projects' && $pageClass === 'agricultural')) ? 'is-active' : '' ?>" href="agricultural-projects.php">Agricultural projects</a>
+        <a class="<?= ($activePage === 'fuel' || ($activePage === 'projects' && $pageClass === 'fuel')) ? 'is-active' : '' ?>" href="fuel-station-project.php">Fuel station project</a>
         <a class="<?= $activePage === 'contact' ? 'is-active' : '' ?>" href="contact.php">Contact</a>
         <span class="language-switch" aria-label="Language">EN <i>|</i> ع</span>
       </nav>
@@ -46,11 +46,11 @@ $pageClass = $pageClass ?? $activePage;
         <button type="button" class="menu-close" data-menu-close aria-label="Close menu"><img src="assets/images/menu-close.svg" alt="" width="24" height="24"></button>
       </div>
       <nav aria-label="Mobile navigation">
-        <a href="index.php">Home</a>
-        <a href="about.php">About us</a>
-        <a href="agricultural-projects.php">Agricultural project</a>
-        <a href="fuel-station-project.php">Fuel station project</a>
-        <a href="contact.php">Contact</a>
+        <a class="<?= $activePage === 'home' ? 'is-active' : '' ?>" href="index.php">Home</a>
+        <a class="<?= $activePage === 'about' ? 'is-active' : '' ?>" href="about.php">About us</a>
+        <a class="<?= ($activePage === 'agricultural' || ($activePage === 'projects' && $pageClass === 'agricultural')) ? 'is-active' : '' ?>" href="agricultural-projects.php">Agricultural project</a>
+        <a class="<?= ($activePage === 'fuel' || ($activePage === 'projects' && $pageClass === 'fuel')) ? 'is-active' : '' ?>" href="fuel-station-project.php">Fuel station project</a>
+        <a class="<?= $activePage === 'contact' ? 'is-active' : '' ?>" href="contact.php">Contact</a>
       </nav>
     </div>
     <div class="mobile-menu__foot">

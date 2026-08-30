@@ -102,13 +102,16 @@ img { display: block; max-width: 100%; }
 .mobile-menu.is-open { opacity: 1; visibility: visible; transform: none; }
 .mobile-menu__upper { width: 100%; }
 .mobile-menu__top { display: flex; width: 100%; height: 64px; justify-content: space-between; align-items: center; }
-.mobile-menu__top > img { width: 106px; height: 48px; }
-.menu-close { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 0; color: white; background: none; border: 1px solid white; cursor: pointer; }
-.menu-close img { width: 18px; height: 18px; }
+.mobile-menu__top > a { display: block; width: 106px; height: 48px; }
+.mobile-menu__top img { width: 100%; height: 100%; }
+.menu-close { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 0; color: white; background: none; border: 0; cursor: pointer; }
+.menu-close img { width: 24px; height: 24px; }
 .mobile-menu nav { display: flex; flex-direction: column; gap: 17px; width: 100%; margin-top: 48px; }
 .mobile-menu nav a { position: relative; display: flex; align-items: center; width: 100%; height: 80px; padding: 24px 20px; font-size: 24px; line-height: 32px; text-transform: uppercase; transition: background-color .2s ease; }
 .mobile-menu nav a::after { content: ""; position: absolute; left: 20px; right: 20px; bottom: -8px; height: 1px; background: rgba(255,255,255,.18); }
 .mobile-menu nav a:hover,.mobile-menu nav a:focus-visible { background: #09453b; outline: none; }
+.mobile-menu nav a.is-active { color: white; }
+.mobile-menu nav a.is-active::before { content: ""; position: absolute; left: 0; top: 17px; width: 2px; height: 45px; background: white; }
 .mobile-menu__foot { display: flex; flex-direction: column; gap: 32px; width: 100%; margin-top: 56px; padding-inline: 20px; font-size: 16px; line-height: 20px; text-transform: uppercase; }
 .mobile-menu__language { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .mobile-menu__language > span:first-child,.mobile-menu__social > span { opacity: .65; }
@@ -870,7 +873,7 @@ img { display: block; max-width: 100%; }
   .page-shell, .site-header__inner { width: calc(100% - 48px); }
   .site-header__inner { width: 100%; height: 80px; min-height: 80px; margin: 0; padding: 16px 24px; }
   .brand img { width: 106px; height: 48px; }
-  .mobile-menu__top > img { width: 106px; height: 48px; }
+  .mobile-menu__top > a { width: 106px; height: 48px; }
   .menu-toggle { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; border: 0; }
   .mobile-menu { padding: 24px 24px 64px; }
   .mobile-menu__top { height: 64px; }
@@ -1025,14 +1028,14 @@ img { display: block; max-width: 100%; }
   .home-enquiry .form-actions .button { width: 100%; height: 54px; padding: 15px 20px; font-size: 16px; line-height: 20px; font-weight: 400; letter-spacing: .6px; text-transform: uppercase; }
   .home-enquiry .form-message { top: 521px; }
 
-  .about-who { height: 960px; padding: 44px 0; }
-  .about-who__grid { height: 872px; display: grid; grid-template-areas: "heading" "image" "body" "button"; grid-template-rows: 198px 264px 288px 56px; row-gap: 22px; }
+  .about-who { height: auto; min-height: 960px; padding: 44px 0; overflow: visible; }
+  .about-who__grid { height: auto; display: grid; grid-template-areas: "heading" "image" "body" "button"; grid-template-rows: auto 264px auto auto; row-gap: 22px; }
   .about-who__copy { display: contents; }
   .about-who__heading { grid-area: heading; display: flex; flex-direction: column; gap: 16px; }
   .about-who__copy .eyebrow { width: 100%; height: 14px; margin: 0; font-size: 14px; font-weight: 400; line-height: 20px; letter-spacing: 0; }
   .about-who__copy .section-title { width: 100%; height: 168px; margin: 0; font-size: 36px; line-height: 42px; letter-spacing: 0; }
   .about-who__image { position: static; grid-area: image; width: 100%; height: 264px; margin: 0; object-fit: cover; }
-  .about-who__copy .lead { grid-area: body; width: 100%; height: 288px; margin: 0; font-size: 16px; line-height: 24px; }
+  .about-who__copy .lead { grid-area: body; width: 100%; height: auto; margin: 0; font-size: 16px; line-height: 24px; }
   .about-who__copy .button { grid-area: button; width: 306px; height: 56px; }
   .about-vision { height: 1144px; padding: 44px 0; }
   .about-vision .section-heading { display: block; width: 100%; height: 167px; margin: 0 0 40px; }
@@ -1213,13 +1216,13 @@ img { display: block; max-width: 100%; }
   .page-fuel .project-facility-gallery { height: 318px; padding: 0 24px 32px; }
   .page-fuel .project-facility-gallery__grid { width: 100%; height: 286px; grid-template-columns: repeat(2,188px); gap: 16px; }
   .page-fuel .project-facility-gallery__grid img:first-child,.page-fuel .project-facility-gallery__grid img:last-child { width: 188px; height: 286px; }
-  .project-faq { height: 688px; padding: 44px 0; }
-  .page-agricultural .project-faq { height: 664px; padding: 44px 0; background: #f7f8f6; }
+  .project-faq { height: auto; min-height: 688px; padding: 44px 0; overflow: visible; }
+  .page-agricultural .project-faq { height: auto; min-height: 664px; padding: 44px 0; overflow: visible; background: #f7f8f6; }
   .page-agricultural .project-faq::before { display: none; }
   .page-agricultural .project-faq__grid { width: 100%; display: block; }
   .page-agricultural .project-faq__grid > div:first-child { gap: 18px; }
   .page-agricultural .project-faq .eyebrow { width: 100%; height: 18px; font-size: 14px; font-weight: 400; line-height: 20px; letter-spacing: 0; }
-  .page-agricultural .project-faq .section-title { width: 100%; height: 92px; font-size: 36px; line-height: 42px; }
+  .page-agricultural .project-faq .section-title { width: 100%; height: auto; font-size: 36px; line-height: 42px; }
   .page-agricultural .project-faq .faq-list { width: 100%; margin-top: 18px; border-top: 1px solid #dde0de; }
   .page-agricultural .project-faq .faq-item button { width: 100%; min-height: 57px; padding: 16px 0; font-size: 16px; line-height: 24px; }
   .page-agricultural .project-faq .faq-item button span { width: 340px; }
@@ -1228,7 +1231,7 @@ img { display: block; max-width: 100%; }
   .page-fuel .project-faq__grid { width: 100%; display: block; }
   .page-fuel .project-faq__grid > div:first-child { gap: 18px; }
   .page-fuel .project-faq .eyebrow { width: 100%; height: 18px; font-size: 14px; font-weight: 400; line-height: 20px; letter-spacing: 0; }
-  .page-fuel .project-faq .section-title { width: 100%; height: 92px; margin: 0; font-size: 36px; line-height: 42px; }
+  .page-fuel .project-faq .section-title { width: 100%; height: auto; margin: 0; font-size: 36px; line-height: 42px; }
   .page-fuel .project-faq .faq-list { width: 100%; margin-top: 18px; border-top: 1px solid #dde0de; }
   .page-fuel .project-faq .faq-item button { width: 100%; min-height: 57px; padding: 16px 0; font-size: 16px; line-height: 24px; }
   .page-fuel .project-faq .faq-item button span { width: 340px; }
@@ -1253,11 +1256,12 @@ img { display: block; max-width: 100%; }
 
   .page-contact .site-header { height: 80px; }
   .page-contact .site-header__inner { margin: 0; padding: 10px 24px; }
-  .contact-hero { height: 449px; min-height: 449px; padding-top: 80px; background-image: url('../images/contact-background-mobile.png'); background-position: -721px 0; background-size: 1440px 817px; }
-  .contact-hero__inner { display: flex; flex-direction: column; justify-content: flex-start; gap: 18px; height: 369px; padding: 56px 0 0; }
-  .contact-hero .eyebrow { width: 100%; height: 20px; font-size: 14px; line-height: 20px; letter-spacing: .6px; }
-  .contact-hero .display { width: 100%; height: 138px; margin: 0 !important; font-size: 40px; line-height: 46px; }
-  .contact-hero .lead { width: 100%; height: 100px; margin: 0 !important; color: #656d6a !important; font-size: 16px; line-height: 25px; }
+  .contact-hero { height: auto; min-height: 449px; padding-top: 80px; background-image: url('../images/contact-background-mobile.png'); background-position: -721px 0; background-size: 1440px 817px; }
+  .contact-hero__inner { display: flex; flex-direction: column; justify-content: flex-start; gap: 24px; height: auto; min-height: 369px; padding: 56px 0 44px; }
+  .contact-hero__inner > div { display: flex; flex-direction: column; gap: 18px; }
+  .contact-hero .eyebrow { width: 100%; height: auto; font-size: 14px; line-height: 20px; letter-spacing: .6px; }
+  .contact-hero .display { width: 100%; height: auto; margin: 0 !important; font-size: 40px; line-height: 46px; }
+  .contact-hero .lead { width: 100%; height: auto; margin: 0 !important; color: #656d6a !important; font-size: 16px; line-height: 25px; }
   .contact-main { height: 1410px; padding: 0; overflow: hidden; }
   .contact-layout { display: flex; flex-direction: column; width: 100%; }
   .contact-layout > div { order: 1; width: 100%; height: 1022px; padding: 44px 24px 52px; overflow: visible; }
@@ -1301,6 +1305,13 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 439px) {
+  .site-footer { height: auto; min-height: 556.314px; overflow: visible; }
+  .site-footer .footer-main { grid-template-rows: auto auto; column-gap: 16px; height: auto; }
+  .site-footer .footer-column { min-width: 0; white-space: normal; }
+  .site-footer .footer-column a,
+  .site-footer .footer-contact p,
+  .site-footer .footer-contact a { align-items: flex-start; min-height: 24px; height: auto; line-height: 18px; overflow-wrap: normal; }
+
   .about-values .value-list,
   .about-principles .principle,
   .contact-details__heading,
@@ -1369,6 +1380,10 @@ img { display: block; max-width: 100%; }
   .page-fuel .project-faq .faq-item button span { width: calc(100% - 28px); }
 
   .home-enquiry { overflow: hidden; }
+}
+
+@media (max-width: 359px) {
+  .site-footer .footer-contact a { overflow-wrap: anywhere; }
 }
 
 @media (max-width: 390px) {
@@ -1444,5 +1459,672 @@ img { display: block; max-width: 100%; }
   .page-fuel .project-facility-gallery__grid img:first-child,
   .page-fuel .project-facility-gallery__grid img:last-child {
     width: 100%;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1439px) {
+  :root { --page-pad: clamp(32px, 4.45vw, 56px); --section-space: clamp(56px, 7vw, 84px); }
+  .page-shell,
+  .site-header__inner { width: min(calc(100% - (2 * var(--page-pad))), 1312px); }
+
+  .section-heading,
+  .home-projects .section-heading,
+  .home-features .section-heading,
+  .about-vision .section-heading,
+  .about-values .section-heading,
+  .about-principles .section-heading,
+  .page-agricultural .project-facilities .section-heading,
+  .page-fuel .project-facilities .section-heading {
+    grid-template-columns: minmax(0, 1.35fr) minmax(260px, .75fr);
+    gap: clamp(32px, 5vw, 64px);
+    width: 100%;
+    height: auto;
+    align-items: start;
+  }
+
+  .section-title,
+  .home-projects .section-heading .section-title,
+  .home-features .section-heading .section-title,
+  .about-vision .section-heading .section-title,
+  .about-values .section-heading .section-title,
+  .about-principles .section-heading .section-title,
+  .page-agricultural .project-facilities .section-heading .section-title,
+  .page-fuel .project-facilities .section-heading .section-title {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(38px, 4.8vw, 50px);
+    line-height: 1.12;
+  }
+
+  .lead,
+  .section-heading .lead,
+  .home-projects .section-heading .lead,
+  .home-features .section-heading .lead,
+  .about-vision .section-heading .lead,
+  .about-values .section-heading .lead,
+  .about-principles .section-heading .lead,
+  .page-agricultural .project-facilities .section-heading .lead,
+  .page-fuel .project-facilities .section-heading .lead {
+    width: 100%;
+    max-width: 46rem;
+  }
+
+  .hero,
+  .hero--project,
+  .page-about .hero,
+  .page-agricultural .hero,
+  .page-fuel .hero {
+    height: auto;
+    min-height: clamp(650px, 72vw, 760px);
+  }
+
+  .hero__content,
+  .page-about .hero__content,
+  .project-page__hero .hero__content,
+  .page-about .about-hero .hero__content,
+  .page-agricultural .project-page__hero .hero__content,
+  .page-fuel .project-page__hero .hero__content {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: min(calc(100% - (2 * var(--page-pad))), 1312px);
+    max-width: 1312px;
+    min-height: inherit;
+    margin-inline: auto;
+    padding: clamp(190px, 22vw, 245px) 0 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .hero__content .display,
+  .page-about .hero__content .display,
+  .page-about .about-hero .hero__content .display,
+  .project-page__hero .display,
+  .page-agricultural .project-page__hero .display,
+  .page-fuel .project-page__hero .display {
+    width: min(760px, 100%);
+    max-width: 100%;
+    font-size: clamp(46px, 6.2vw, 60px);
+    line-height: 1.1;
+  }
+
+  .hero__content .lead,
+  .page-about .hero__content .lead,
+  .page-about .about-hero .hero__content .lead,
+  .project-page__hero .lead,
+  .page-agricultural .project-page__hero .lead,
+  .page-fuel .project-page__hero .lead,
+  .page-fuel .project-hero__summary {
+    width: min(760px, 100%);
+    max-width: 100%;
+  }
+
+  .page-fuel .project-page__hero .lead {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .page-home .hero__overlay,
+  .page-agricultural .project-page__hero .hero__overlay,
+  .page-fuel .project-page__hero .hero__overlay,
+  .page-about .about-hero .hero__overlay {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .home-about,
+  .home-projects,
+  .home-features,
+  .home-masterplan,
+  .home-steps,
+  .home-enquiry,
+  .about-who,
+  .about-vision,
+  .about-values,
+  .about-principles,
+  .growth-banner,
+  .project-introduction,
+  .page-agricultural .project-introduction,
+  .page-fuel .project-introduction,
+  .project-sites,
+  .project-intro-gallery,
+  .project-details,
+  .page-agricultural .project-details,
+  .page-fuel .project-details,
+  .project-gallery,
+  .page-agricultural .project-gallery,
+  .page-fuel .project-gallery,
+  .project-facilities,
+  .page-agricultural .project-facilities,
+  .page-fuel .project-facilities,
+  .project-facility-gallery,
+  .project-faq,
+  .page-agricultural .project-faq,
+  .page-fuel .project-faq,
+  .contact-main {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding-block: var(--section-space);
+  }
+
+  .home-about__layout {
+    position: static;
+    height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(240px, .8fr);
+    gap: clamp(28px, 4.5vw, 56px);
+    align-items: start;
+  }
+
+  .home-about__title,
+  .home-about__intro,
+  .home-about__agriculture,
+  .home-about__perspective,
+  .home-about__commercial,
+  .home-about__development-label,
+  .home-about__story-link {
+    position: static;
+    width: 100%;
+  }
+
+  .home-about__title { grid-column: 1 / -1; font-size: clamp(48px, 7vw, 72px); line-height: 1; }
+  .home-about__agriculture { height: clamp(320px, 42vw, 453px); }
+  .home-about__commercial { height: clamp(220px, 28vw, 300px); }
+  .home-about__intro,
+  .home-about__development-label,
+  .home-about__story-link { grid-column: 2; }
+  .home-about__perspective { grid-column: 1; grid-row: 3 / span 3; }
+
+  .home-projects .project-cards,
+  .home-features .feature-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: clamp(20px, 3vw, 32px);
+    overflow: visible;
+  }
+
+  .home-projects .project-card,
+  .home-projects .project-card__image,
+  .home-projects .project-card__title-row,
+  .home-projects .project-card__meta h3,
+  .home-features .feature-card {
+    width: 100%;
+  }
+
+  .home-projects .project-card { height: auto; }
+  .home-projects .project-card__image { height: clamp(360px, 46vw, 540px); }
+  .home-projects .project-card__future-title { left: 24px; right: 24px; top: auto; bottom: 32px; width: auto; }
+  .home-features .feature-card { overflow: visible; }
+  .home-features .feature-card > img,
+  .home-features .feature-card--third > img,
+  .home-features .feature-card--fourth > img {
+    width: 100%;
+    max-width: 100%;
+    height: clamp(220px, 28vw, 265px);
+    margin: 0;
+  }
+
+  .home-masterplan .masterplan {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+    gap: clamp(36px, 5vw, 64px);
+    height: auto;
+  }
+
+  .home-masterplan .masterplan__image,
+  .home-masterplan .masterplan__copy,
+  .home-masterplan .masterplan__divider,
+  .home-masterplan .stats {
+    position: static;
+    width: 100%;
+  }
+
+  .home-masterplan .masterplan__image { height: clamp(380px, 48vw, 642px); min-height: 0; }
+  .home-masterplan .masterplan__copy { gap: 28px; }
+  .home-masterplan .masterplan__divider { grid-column: 1 / -1; margin-top: 12px; }
+  .home-masterplan .stats {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(24px, 7vw, 96px);
+    height: auto;
+    margin: 0;
+  }
+  .home-masterplan .stats > i { display: none; }
+
+  .home-steps .steps {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr);
+    gap: clamp(36px, 6vw, 72px);
+    height: auto;
+  }
+  .home-steps .steps > div:first-child .eyebrow,
+  .home-steps .steps > div:first-child .section-title,
+  .home-steps .steps > div:first-child .lead,
+  .home-steps .steps-list,
+  .home-steps .step__number,
+  .home-steps .step h3,
+  .home-steps .step p {
+    position: static;
+    width: 100%;
+  }
+  .home-steps .steps-list { margin: 0; }
+  .home-steps .step,
+  .home-steps .step:first-child {
+    display: grid;
+    grid-template-columns: 48px minmax(0, .9fr) minmax(220px, 1fr);
+    gap: clamp(16px, 3vw, 36px);
+    height: auto;
+    padding: 24px 0;
+  }
+
+  .home-enquiry .enquiry__background {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .home-enquiry .enquiry__inner {
+    position: static;
+    display: grid;
+    grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr);
+    gap: clamp(36px, 5vw, 64px);
+    height: auto;
+  }
+  .home-enquiry__intro,
+  .home-enquiry .form-grid,
+  .home-enquiry .field,
+  .home-enquiry .field--wide,
+  .home-enquiry .form-actions,
+  .home-enquiry .form-actions small {
+    position: static;
+    width: 100%;
+  }
+  .home-enquiry .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: auto;
+    gap: 32px 24px;
+  }
+
+  .about-who__grid,
+  .about-vision .vision-grid,
+  .about-values .value-list,
+  .about-principles .principles,
+  .project-intro,
+  .page-agricultural .project-intro,
+  .page-fuel .project-intro,
+  .page-agricultural .project-details__grid,
+  .page-fuel .project-details__grid,
+  .contact-layout,
+  .contact-hero__inner {
+    display: grid;
+    gap: clamp(32px, 5vw, 64px);
+    width: 100%;
+    height: auto;
+  }
+
+  .about-who__grid { position: static; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+  .about-who__image,
+  .about-who__copy {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  .about-who__image { min-height: 360px; }
+  .about-who__copy,
+  .about-who__copy .eyebrow,
+  .about-who__copy .section-title,
+  .about-who__copy .lead { width: 100%; max-width: 100%; overflow: visible; }
+
+  .about-vision .vision-grid,
+  .about-values .value-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-vision .section-heading > div,
+  .about-values .section-heading > div,
+  .about-principles .section-heading > div,
+  .about-vision .section-heading .eyebrow,
+  .about-values .section-heading .eyebrow,
+  .about-principles .section-heading .eyebrow,
+  .about-vision .vision-card,
+  .about-values .value-card,
+  .about-values .value-card__copy,
+  .about-values .value-card__copy h3,
+  .about-values .value-card__copy .lead {
+    width: 100%;
+    max-width: 100%;
+  }
+  .about-vision .section-heading,
+  .about-values .section-heading,
+  .about-principles .section-heading,
+  .about-vision .section-heading .section-title,
+  .about-values .section-heading .section-title,
+  .about-principles .section-heading .section-title,
+  .about-vision .section-heading .lead,
+  .about-values .section-heading .lead,
+  .about-principles .section-heading .lead {
+    height: auto;
+  }
+  .about-vision .vision-card { min-height: clamp(440px, 55vw, 525px); height: auto; }
+  .about-vision .vision-card__label,
+  .about-vision .vision-card__copy p {
+    width: 100%;
+  }
+  .about-principles .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-principles .principle {
+    grid-template-columns: minmax(150px, 40%) minmax(0, 1fr);
+    width: 100%;
+    min-height: 220px;
+    height: auto;
+    overflow: visible;
+  }
+  .about-principles .principle img,
+  .about-principles .principle > div { width: 100%; height: auto; }
+  .about-principles .principle h3,
+  .about-principles .principle p {
+    width: 100%;
+  }
+  .growth-banner__copy,
+  .page-about .growth-banner__copy {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: min(760px, 100%);
+    padding: clamp(72px, 12vw, 120px) 0;
+    transform: none;
+  }
+  .page-about .growth-banner__copy .eyebrow,
+  .page-about .growth-banner__copy .section-title,
+  .page-about .growth-banner__copy .lead {
+    width: 100%;
+  }
+
+  .project-intro {
+    grid-template-columns: minmax(0, .95fr) minmax(320px, 1fr);
+  }
+  .page-agricultural .project-intro,
+  .page-fuel .project-intro {
+    grid-template-columns: minmax(0, .95fr) minmax(320px, 1fr);
+    justify-content: stretch;
+  }
+  .project-intro > div:first-child,
+  .page-agricultural .project-intro > div:first-child,
+  .page-fuel .project-intro > div:first-child,
+  .project-intro .section-title,
+  .page-agricultural .project-intro .section-title,
+  .page-fuel .project-intro .section-title,
+  .project-intro__copy,
+  .page-agricultural .project-intro__copy,
+  .page-fuel .project-intro__copy,
+  .project-intro__copy h2,
+  .page-agricultural .project-intro__copy h2,
+  .page-fuel .project-intro__copy h2,
+  .project-intro__copy .lead,
+  .page-agricultural .project-intro__copy .lead,
+  .page-fuel .project-intro__copy .lead,
+  .page-agricultural .project-facts,
+  .page-fuel .project-facts,
+  .project-facts {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    overflow: visible;
+  }
+  .project-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .project-sites > .page-shell,
+  .project-sites .eyebrow,
+  .project-sites__title {
+    width: min(calc(100% - (2 * var(--page-pad))), 1312px);
+    max-width: 1312px;
+  }
+  .site-comparison { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site-card,
+  .site-card > span,
+  .site-card h3,
+  .site-card dl {
+    width: 100%;
+    height: auto;
+  }
+  .site-card dl div { grid-template-columns: minmax(120px, 38%) minmax(0, 1fr); }
+
+  .page-agricultural .project-details__grid,
+  .page-fuel .project-details__grid {
+    grid-template-columns: minmax(280px, .8fr) minmax(0, 1.1fr);
+  }
+  .page-agricultural .project-details .section-title,
+  .page-fuel .project-details .section-title,
+  .page-agricultural .project-details .lead,
+  .page-fuel .project-details .lead,
+  .page-agricultural .detail-list,
+  .page-fuel .detail-list,
+  .page-agricultural .detail-item p,
+  .page-fuel .detail-item p {
+    width: 100%;
+  }
+  .page-agricultural .detail-item,
+  .page-fuel .detail-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    height: auto;
+  }
+
+  .project-intro-gallery__grid,
+  .page-agricultural .project-intro-gallery__grid,
+  .page-fuel .project-intro-gallery__grid,
+  .project-gallery__grid,
+  .page-agricultural .project-gallery__grid,
+  .page-fuel .project-gallery__grid,
+  .page-agricultural .project-facility-gallery__grid,
+  .page-fuel .project-facility-gallery__grid {
+    width: 100%;
+    height: auto;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr);
+    grid-template-rows: none;
+  }
+  .project-gallery__grid,
+  .page-agricultural .project-gallery__grid,
+  .page-fuel .project-gallery__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .project-gallery__grid img:first-child,
+  .page-agricultural .project-gallery__grid img:first-child,
+  .page-fuel .project-gallery__grid img:first-child {
+    grid-column: 1 / -1;
+  }
+  .project-intro-gallery__grid img:first-child,
+  .project-intro-gallery__grid img:last-child,
+  .page-agricultural .project-intro-gallery__grid img:first-child,
+  .page-agricultural .project-intro-gallery__grid img:last-child,
+  .page-fuel .project-intro-gallery__grid img:first-child,
+  .page-fuel .project-intro-gallery__grid img:last-child,
+  .project-gallery__grid img,
+  .project-gallery__grid img:first-child,
+  .project-gallery__grid img:nth-child(2),
+  .project-gallery__grid img:nth-child(3),
+  .page-agricultural .project-gallery__grid img:first-child,
+  .page-agricultural .project-gallery__grid img:nth-child(2),
+  .page-agricultural .project-gallery__grid img:nth-child(3),
+  .page-fuel .project-gallery__grid img:first-child,
+  .page-fuel .project-gallery__grid img:nth-child(2),
+  .page-fuel .project-gallery__grid img:nth-child(3),
+  .page-agricultural .project-facility-gallery__grid img:first-child,
+  .page-agricultural .project-facility-gallery__grid img:last-child,
+  .page-fuel .project-facility-gallery__grid img:first-child,
+  .page-fuel .project-facility-gallery__grid img:last-child {
+    width: 100%;
+    height: clamp(320px, 48vw, 620px);
+    align-self: auto;
+  }
+
+  .project-facilities-layout {
+    display: grid;
+    grid-template-columns: minmax(240px, .55fr) minmax(0, 1fr);
+    gap: clamp(36px, 5vw, 72px);
+    align-items: start;
+  }
+  .project-facilities-image,
+  .agricultural-facilities-content,
+  .page-agricultural .agricultural-facilities-content,
+  .page-fuel .agricultural-facilities-content,
+  .page-agricultural .project-facilities .section-heading,
+  .page-fuel .project-facilities .section-heading,
+  .page-agricultural .project-facilities .facility-grid,
+  .page-fuel .project-facilities .facility-grid {
+    width: 100%;
+  }
+  .project-facilities-image { height: clamp(360px, 50vw, 654px); }
+  .page-agricultural .project-facilities .facility-grid,
+  .page-fuel .project-facilities .facility-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+  .page-agricultural .project-facilities .facility,
+  .page-fuel .project-facilities .facility,
+  .page-agricultural .project-facilities .facility__head,
+  .page-fuel .project-facilities .facility__head,
+  .page-agricultural .project-facilities .facility > p,
+  .page-fuel .project-facilities .facility > p {
+    width: 100%;
+  }
+
+  .page-agricultural .project-faq__grid,
+  .page-fuel .project-faq__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(280px, .7fr) minmax(0, 1fr);
+    gap: clamp(36px, 5vw, 72px);
+  }
+  .page-agricultural .project-faq .section-title,
+  .page-fuel .project-faq .section-title,
+  .page-agricultural .project-faq .faq-list,
+  .page-fuel .project-faq .faq-list,
+  .page-agricultural .project-faq .faq-item button,
+  .page-fuel .project-faq .faq-item button {
+    width: 100%;
+  }
+
+  .project-cta,
+  .page-agricultural .project-cta,
+  .page-fuel .project-cta {
+    height: auto;
+    min-height: clamp(520px, 58vw, 600px);
+  }
+  .page-agricultural .project-cta__copy,
+  .page-fuel .project-cta__copy {
+    left: var(--page-pad);
+    width: min(790px, calc(100% - (2 * var(--page-pad))));
+  }
+  .page-agricultural .project-cta__copy .section-title,
+  .page-fuel .project-cta__copy .section-title,
+  .page-agricultural .project-cta__copy .lead,
+  .page-fuel .project-cta__copy .lead {
+    width: 100%;
+  }
+
+  .contact-hero {
+    height: auto;
+    min-height: 493px;
+    background-size: cover;
+  }
+  .contact-hero__inner {
+    grid-template-columns: minmax(0, 1.35fr) minmax(260px, .75fr);
+    padding-top: clamp(88px, 10vw, 102px);
+  }
+  .contact-hero .display,
+  .contact-hero .lead,
+  .contact-layout > *,
+  .contact-details__list,
+  .contact-main .form-grid,
+  .contact-main .field,
+  .contact-main .field--wide,
+  .contact-main .field--wide textarea,
+  .contact-main .form-actions,
+  .contact-main .form-actions small {
+    width: 100%;
+    min-width: 0;
+  }
+  .contact-main fieldset.field {
+    height: auto;
+    min-width: 0;
+  }
+  .contact-main fieldset.field > div {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 12px clamp(18px, 3vw, 52px);
+  }
+  .contact-layout { grid-template-columns: minmax(260px, .55fr) minmax(0, 1fr); }
+  .contact-main .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 900px) {
+  .section-heading,
+  .home-projects .section-heading,
+  .home-features .section-heading,
+  .about-vision .section-heading,
+  .about-values .section-heading,
+  .about-principles .section-heading,
+  .page-agricultural .project-facilities .section-heading,
+  .page-fuel .project-facilities .section-heading,
+  .home-about__layout,
+  .home-masterplan .masterplan,
+  .home-steps .steps,
+  .home-enquiry .enquiry__inner,
+  .about-who__grid,
+  .project-intro,
+  .page-agricultural .project-intro,
+  .page-fuel .project-intro,
+  .page-agricultural .project-details__grid,
+  .page-fuel .project-details__grid,
+  .project-facilities-layout,
+  .page-agricultural .project-faq__grid,
+  .page-fuel .project-faq__grid,
+  .contact-layout,
+  .contact-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .home-about__title,
+  .home-about__intro,
+  .home-about__agriculture,
+  .home-about__perspective,
+  .home-about__commercial,
+  .home-about__development-label,
+  .home-about__story-link {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .home-steps .step,
+  .home-steps .step:first-child {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+  .home-steps .step p { grid-column: 2; }
+
+  .home-enquiry .form-grid,
+  .contact-main .form-grid,
+  .about-values .value-list,
+  .about-principles .principles,
+  .page-agricultural .project-facilities .facility-grid,
+  .page-fuel .project-facilities .facility-grid,
+  .project-facts,
+  .site-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .project-intro-gallery__grid,
+  .page-agricultural .project-intro-gallery__grid,
+  .page-fuel .project-intro-gallery__grid,
+  .project-gallery__grid,
+  .page-agricultural .project-gallery__grid,
+  .page-fuel .project-gallery__grid,
+  .page-agricultural .project-facility-gallery__grid,
+  .page-fuel .project-facility-gallery__grid {
+    grid-template-columns: 1fr;
   }
 }
