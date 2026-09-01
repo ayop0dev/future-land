@@ -55,7 +55,7 @@
       event.preventDefault();
       if (!form.reportValidity()) return;
       const message = form.querySelector('[data-form-message]');
-      if (message) message.textContent = 'Thank you. Your enquiry is ready for the Future Land team.';
+      if (message) message.textContent = document.body.dataset.formSuccess || 'Thank you. Your enquiry is ready for the Future Land team.';
       form.reset();
     });
   });

@@ -1,10 +1,10 @@
 # Future Land — Implementation Checkpoint
 
-Last updated: 31 August 2026
+Last updated: 1 September 2026
 
 ## Objective
 
-Build the Future Land website from the approved Figma design as a framework-free PHP/HTML site using Tailwind CSS and local GSAP. English is the first-release language. The implementation should match the supplied desktop and mobile Figma frames as closely as possible.
+Build the Future Land website from the approved Figma design as a framework-free PHP/HTML site using Tailwind CSS and local GSAP. English remains the approved baseline, with a complete Arabic version added under `/ar/` using the same visual and responsive system adapted for RTL.
 
 ## Project Location
 
@@ -25,13 +25,23 @@ Build the Future Land website from the approved Figma design as a framework-free
 - `agricultural-projects.php` — Agricultural project data
 - `fuel-station-project.php` — Fuel station project data
 - `contact.php` — Contact/enquiry page
+- `ar/index.php` — Arabic homepage route
+- `ar/about.php` — Arabic About route
+- `ar/agricultural-projects.php` — Arabic Agricultural project route
+- `ar/fuel-station-project.php` — Arabic Fuel Station project route
+- `ar/contact.php` — Arabic Contact/enquiry route
+- `includes/content.php` — Shared bilingual content/config layer
 - `includes/header.php` — Shared document head, header, desktop navigation, and mobile menu
 - `includes/footer.php` — Shared footer
 - `includes/project-layout.php` — Shared agricultural/fuel project-page structure
+- `templates/home.php` — Shared bilingual homepage template
+- `templates/about.php` — Shared bilingual About template
+- `templates/contact.php` — Shared bilingual Contact template
 - `assets/css/input.css` — Tailwind source and page-specific fidelity rules
 - `assets/css/site.css` — Compiled/minified CSS
 - `assets/js/site.js` — Navigation, forms, accordion, GSAP reveals, and parallax
 - `docs/Content - EN.md` — Authoritative English content source
+- `docs/Content - AR.md` — Authoritative Arabic content source
 - `.impeccable.md` — Project design context
 
 ## Figma Source
@@ -65,6 +75,8 @@ The complete local TS Safaa family is available under `assets/fonts` and registe
 - `TSSafaa-Bold.otf` → weights `600–700`
 
 The previous CSS referenced non-existent `TS-Safaa-*.otf` filenames and mapped weights `500–700` to the Regular face. Those mappings were corrected on 25 August 2026, and `assets/css/site.css` was rebuilt. `font-synthesis: none` remains enabled.
+
+TS Safaa was verified for Arabic glyph support before implementing the Arabic version. No replacement font was introduced.
 
 ## Completed Work
 
@@ -106,6 +118,13 @@ The previous CSS referenced non-existent `TS-Safaa-*.otf` filenames and mapped w
 - Kept the approved 320px, 360px, 440px, and 1440px layouts intact while making sub-320px widths degrade safely without global horizontal overflow masking.
 - Added a targeted About-page small-mobile spacing adjustment so the section headings and following image/card grids keep a clearer gap below 390px, with a stronger under-320px guard for wrapped headings.
 - Adjusted the Homepage enquiry section background so the desktop image remains centered and spans both viewport edges on widths above the 1440px Figma endpoint while preserving existing mobile and intermediate positioning.
+- Added the complete Arabic version under `/ar/`, `/ar/about.php`, `/ar/agricultural-projects.php`, `/ar/fuel-station-project.php`, and `/ar/contact.php`.
+- Added a shared bilingual content/config layer using language-aware values such as `$lang`, `$dir`, `$basePath`, `$content`, and matching language-switch URLs.
+- Reused the approved English visual structure through shared templates and shared project layout instead of duplicating full page implementations.
+- Localized visible Arabic content, navigation, footer, forms, success messages, FAQ, project enquiry preselection, page titles, and meta descriptions from `docs/Content - AR.md`.
+- Added scoped RTL layout and typography rules under `html[dir="rtl"]`, including navigation, hero content, cards, forms, FAQ, CTA sections, footer, mobile menu, directional icons, and select controls.
+- Adapted the Arabic homepage enquiry background to span the full section width at all tested viewport widths.
+- Increased Arabic-only line-height through shared RTL typography rules for large hero headings, section headings, card titles, body copy, buttons/labels, navigation/footer text, FAQ, and form text without changing English typography.
 
 ## Exact Mobile Section Heights Implemented
 
@@ -164,6 +183,11 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - The narrow stress pass confirmed `document.documentElement.scrollWidth <= document.documentElement.clientWidth`, no main-section overlap, and `0` console errors across all implemented routes.
 - About-page small-mobile spacing validation passed at 280, 320, 360, 390, and 440px, with `0` console errors and no horizontal overflow. The approved 440px spacing remains unchanged.
 - Homepage enquiry background validation passed at 1440, 1600, and 1920px with the background spanning the viewport from both edges. Regression checks at 440, 1024, and 1280px passed with no horizontal overflow and `0` console errors.
+- Arabic font glyph validation passed for the existing TS Safaa font family.
+- Final bilingual QA passed for English and Arabic routes, including language switcher mapping, header/navigation links, footer links, project links, anchors, active states, mobile menu, FAQ, forms, success messages, project enquiry preselection, `lang`/`dir` attributes, page titles, meta descriptions, favicon/assets, PHP warnings/notices, missing assets, broken images, invalid relative paths, and canonical/SEO basics where present.
+- Arabic responsive validation passed at 320, 440, 768, 1024, 1280, and 1440px for all Arabic routes with `document.documentElement.scrollWidth <= document.documentElement.clientWidth`, `0` console errors, and no broken assets.
+- Arabic homepage enquiry background validation passed at 320, 440, 768, 1024, 1280, and 1440px with exact full-width section coverage and no horizontal overflow.
+- Arabic-only line-height validation passed across all Arabic routes at 320, 440, 768, 1024, 1280, and 1440px for runtime status, RTL attributes, horizontal overflow, broken assets, and console errors. Visual inspection of the reported fixed-height home project section confirmed no visible clipping or overlap after the line-height pass.
 
 ## Git and GitHub Status
 
@@ -177,7 +201,7 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Pushed `main` successfully and set it to track `origin/main`.
 - Verified that the local and remote `main` branches point to the same commit.
 - The first HTTPS upload was reset by the connection; forcing Git to HTTP/1.1 allowed the retry to complete. The repository-local `http.version` remains set to `HTTP/1.1`.
-- Latest pending work before this push: Homepage enquiry desktop background containment updates in `assets/css/input.css`, rebuilt `assets/css/site.css`, and this checkpoint update.
+- Latest pending work before this push: complete Arabic/RTL implementation, Arabic homepage enquiry full-width background adjustment, Arabic-only line-height improvements, rebuilt `assets/css/site.css`, and this checkpoint update.
 
 Repository:
 
