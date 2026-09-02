@@ -3163,7 +3163,122 @@ html[dir="rtl"] .site-footer .footer-bottom {
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .site-header__inner,
+  .page-shell,
+  .section-heading > *,
+  .home-about__layout > *,
+  .home-masterplan .masterplan > *,
+  .home-steps .steps > *,
+  .home-enquiry .enquiry__inner > *,
+  .about-who__grid > *,
+  .about-vision .vision-grid > *,
+  .about-values .value-list > *,
+  .about-principles .principles > *,
+  .project-intro > *,
+  .project-details__grid > *,
+  .project-facilities-layout > *,
+  .project-faq__grid > *,
+  .contact-hero__inner > *,
+  .contact-layout > *,
+  .site-footer .footer-main > * {
+    min-width: 0;
+  }
+
+  .home-enquiry .form-grid,
+  .contact-main .form-grid {
+    align-items: start;
+  }
+
+  .home-enquiry .enquiry__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .home-enquiry .form-grid > *,
+  .contact-main .form-grid > *,
+  .project-facts > *,
+  .site-comparison > *,
+  .facility-grid > * {
+    min-width: 0;
+  }
+
+  html[dir="rtl"] .page-agricultural .project-cta__copy,
+  html[dir="rtl"] .page-fuel .project-cta__copy {
+    left: auto;
+    right: var(--page-pad);
+  }
+
+  .site-footer {
+    height: auto;
+    min-height: 339px;
+  }
+
+  .site-footer .footer-main {
+    grid-template-columns: minmax(260px, 1.4fr) minmax(150px, .85fr) minmax(150px, .85fr);
+    grid-template-rows: none;
+    gap: clamp(24px, 3vw, 48px);
+    height: auto;
+    padding-inline: 0;
+  }
+
+  .site-footer .footer-brand,
+  .site-footer .footer-column,
+  .site-footer .footer-contact {
+    grid-column: auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .site-footer .footer-bottom {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 24px;
+    height: auto;
+  }
+}
+
 @media (min-width: 561px) and (max-width: 1024px) {
+  .home-enquiry {
+    padding: 72px 0 104px;
+  }
+
+  .home-enquiry .enquiry__inner {
+    grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  .home-enquiry__intro .section-title {
+    font-size: 42px;
+    line-height: 48px;
+  }
+
+  .home-enquiry__intro .lead {
+    width: 100%;
+  }
+
+  .home-enquiry .form-grid {
+    gap: 32px 24px;
+  }
+
+  .home-enquiry .field {
+    height: auto;
+    min-height: 75px;
+  }
+
+  .home-enquiry .field--wide {
+    min-height: 96px;
+  }
+
+  .home-enquiry .form-actions {
+    grid-column: 1 / -1;
+    min-height: 54px;
+  }
+
+  .home-enquiry .form-actions small {
+    width: auto;
+  }
+
   .home-about__layout {
     grid-template-columns: minmax(170px, .75fr) minmax(0, 1.4fr) minmax(170px, .75fr);
     gap: 24px;
@@ -3274,6 +3389,30 @@ html[dir="rtl"] .site-footer .footer-bottom {
 }
 
 @media (max-width: 560px) {
+  .contact-layout > aside {
+    height: auto;
+    min-height: 328px;
+  }
+
+  .contact-details__heading h2 {
+    height: auto;
+    min-height: 30px;
+  }
+
+  .contact-details__heading {
+    gap: 24px;
+  }
+
+  .contact-details__list {
+    margin-top: 20px;
+  }
+
+  .contact-details__list a,
+  .contact-details__list p {
+    height: 64px;
+    padding: 18px 0;
+  }
+
   .page-agricultural .site-card {
     height: auto;
     min-height: 290px;
