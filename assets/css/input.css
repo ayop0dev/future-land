@@ -53,6 +53,7 @@
   --space-3xl: 4.5rem;
   --space-4xl: 7.5rem;
   --space-5xl: 10rem;
+  --content-max: 82rem;
   --page-pad: clamp(var(--space-md), 4.45vw, var(--space-2xl));
   --section-space: clamp(var(--space-2xl), 8vw, var(--space-4xl));
   --green: #05332c;
@@ -76,7 +77,13 @@ img { display: block; max-width: 100%; }
 }
 .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; background: white; color: var(--ink); padding: .75rem 1rem; }
 .skip-link:focus { top: 1rem; }
-.page-shell { width: min(100% - (2 * var(--page-pad)), 1312px); margin-inline: auto; }
+.page-shell {
+  inline-size: min(calc(100% - (2 * var(--page-pad))), var(--content-max));
+  max-inline-size: calc(100% - (2 * var(--page-pad)));
+  margin-inline: auto;
+  min-inline-size: 0;
+}
+.page-shell > * { min-inline-size: 0; }
 .section { padding-block: var(--section-space); }
 .eyebrow { margin: 0; font-size: .75rem; line-height: 1; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
 .display { margin: 0; font-size: clamp(2.5rem, 4.2vw, 4.5rem); line-height: .99; font-weight: 400; letter-spacing: -.025em; }
@@ -3504,12 +3511,6 @@ html[dir="rtl"] .site-footer .footer-contact a {
   height: auto;
   white-space: normal;
   overflow-wrap: anywhere;
-}
-
-@media (min-width: 561px) {
-  html[dir="rtl"] .site-footer .footer-main {
-    padding-inline: 24px;
-  }
 }
 
 @media (min-width: 561px) and (max-width: 1439px) {
