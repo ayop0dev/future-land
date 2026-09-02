@@ -91,10 +91,19 @@ require __DIR__ . '/header.php';
   </div>
 </section>
 
+<?php
+  $faqHasFigmaBackground = in_array($projectKey, ['agricultural', 'fuel'], true);
+  $faqPlusIcon = match ($projectKey) {
+    'agricultural' => 'assets/images/agricultural-faq-plus.svg',
+    'fuel' => 'assets/images/fuel-faq-plus.svg',
+    default => 'assets/images/faq-plus.svg',
+  };
+?>
 <section class="project-faq bg-white">
+  <?php if ($faqHasFigmaBackground): ?><div class="project-faq__background" aria-hidden="true"><div class="project-faq__background-image"></div></div><?php endif; ?>
   <div class="page-shell project-faq__grid">
     <div data-reveal><p class="eyebrow text-brand"><?= e($project['faqEyebrow']) ?></p><h2 class="section-title"><?= e($project['faqTitle']) ?></h2></div>
-    <div class="faq-list" data-reveal><?php foreach ($project['faqs'] as $faq): ?><article class="faq-item"><button type="button" data-accordion-button aria-expanded="false"><span><?= e($faq[0]) ?></span><img src="<?= e(fl_asset('assets/images/faq-plus.svg')) ?>" alt=""></button><div class="faq-answer"><div><p><?= e($faq[1]) ?></p></div></div></article><?php endforeach; ?></div>
+    <div class="faq-list" data-reveal><?php foreach ($project['faqs'] as $faq): ?><article class="faq-item"><button type="button" data-accordion-button aria-expanded="false"><span><?= e($faq[0]) ?></span><img src="<?= e(fl_asset($faqPlusIcon)) ?>" alt=""></button><div class="faq-answer"><div><p><?= e($faq[1]) ?></p></div></div></article><?php endforeach; ?></div>
   </div>
 </section>
 

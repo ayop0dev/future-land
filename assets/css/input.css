@@ -2418,6 +2418,44 @@ img { display: block; max-width: 100%; }
   }
 }
 
+@media (min-width: 561px) and (max-width: 860px) {
+  html[dir="rtl"] .home-projects .project-cards {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1024px) {
+  html[dir="rtl"] .site-footer .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    gap: 32px;
+    height: auto;
+  }
+
+  html[dir="rtl"] .site-footer .footer-brand {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  html[dir="rtl"] .site-footer .footer-column,
+  html[dir="rtl"] .site-footer .footer-contact {
+    width: 100%;
+    min-width: 0;
+  }
+
+  html[dir="rtl"] .site-footer .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 18px 28px;
+    height: auto;
+  }
+
+  html[dir="rtl"] .site-footer .footer-bottom > div {
+    flex-wrap: wrap;
+  }
+}
+
 @media (min-width: 561px) and (max-width: 900px) {
   .section-heading,
   .home-projects .section-heading,
@@ -2523,12 +2561,23 @@ html[dir="rtl"] .faq-item button {
   text-align: right;
 }
 
+html[dir="rtl"] .eyebrow,
+html[dir="rtl"] .home-about__perspective-label {
+  overflow: visible;
+}
+
 html[dir="rtl"] .footer-column {
   align-items: flex-start;
 }
 
 html[dir="rtl"] .footer-bottom > div:last-child {
   justify-content: flex-start;
+}
+
+html[dir="rtl"] .footer-contact a,
+html[dir="rtl"] .footer-contact p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 html[dir="rtl"] .contact-main .field select {
@@ -2655,7 +2704,11 @@ html[dir="rtl"] .home-enquiry .enquiry__background {
   transform: none;
 }
 
-@media (min-width: 901px) {
+html[dir="rtl"] .home-projects .project-card {
+  overflow: visible;
+}
+
+@media (min-width: 1440px) {
   html[dir="rtl"] .page-home .hero__overlay,
   html[dir="rtl"] .page-fuel .project-page__hero .hero__overlay,
   html[dir="rtl"] .page-about .growth-banner::after {
@@ -2933,7 +2986,350 @@ html[dir="rtl"] .home-enquiry .enquiry__background {
     right: 24px;
   }
 
-  html[dir="rtl"] .site-footer .footer-bottom {
+html[dir="rtl"] .site-footer .footer-bottom {
     text-align: right;
+  }
+
+  html[dir="rtl"] .home-projects {
+    height: auto;
+    min-height: 1980px;
+  }
+
+  html[dir="rtl"] .home-projects .project-card {
+    height: auto;
+    min-height: 510px;
+  }
+
+  html[dir="rtl"] .home-projects .project-card__title-row,
+  html[dir="rtl"] .home-projects .project-card__meta h3 {
+    height: auto;
+    min-height: 34px;
+  }
+
+  html[dir="rtl"] .contact-main fieldset.field,
+  html[dir="rtl"] .contact-main fieldset.field > div {
+    height: auto;
+  }
+
+  html[dir="rtl"] .contact-main fieldset.field > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 18px;
+    justify-content: stretch;
+    width: 100%;
+  }
+}
+
+/* Fuel project refinements shared by the English and Arabic routes. */
+@media (min-width: 901px) {
+  html[dir="rtl"] .page-fuel .project-page__hero .display {
+    width: 700px;
+  }
+
+  html[dir="rtl"] .page-fuel .project-page__hero .display > span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .page-fuel .project-page__hero .hero__content {
+    top: 248px;
+  }
+
+  .page-fuel .project-introduction {
+    height: auto;
+    min-height: 530px;
+    padding-bottom: 56px;
+    overflow: visible;
+  }
+
+  .page-fuel .project-intro__copy,
+  .page-fuel .project-intro__copy .lead {
+    height: auto;
+    overflow: visible;
+  }
+
+  .page-fuel .project-intro__copy .lead {
+    margin-bottom: 28px;
+  }
+
+  .page-fuel .project-facts {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    padding-top: 22px;
+  }
+
+  .page-fuel .project-details__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 480px) minmax(0, 650px);
+    justify-content: start;
+    align-items: start;
+    gap: 90px;
+  }
+
+  .page-fuel .project-details .detail-list {
+    margin-top: 0;
+  }
+}
+
+.page-fuel .project-gallery {
+  background: #fff;
+}
+
+.page-agricultural .project-gallery {
+  background: #fff;
+}
+
+.page-fuel .project-faq::before {
+  display: none;
+}
+
+.page-fuel .project-faq__background {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  overflow: hidden;
+  transform: none;
+  -webkit-mask-image: url('../images/fuel-faq-mask.svg');
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: url('../images/fuel-faq-mask.svg');
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.page-fuel .project-faq__background-image {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #fff 9.815%, rgba(255,255,255,.38) 27.135%, rgba(255,255,255,0) 39.861%), url('../images/fuel-faq-background.png') center / cover no-repeat;
+}
+
+.page-fuel .project-faq__grid {
+  position: relative;
+  z-index: 1;
+}
+
+.page-fuel .project-faq .faq-item button > img {
+  width: 24px;
+  height: 24px;
+}
+
+.page-agricultural .project-faq::before {
+  display: none;
+}
+
+.page-agricultural .project-faq__background {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  overflow: hidden;
+  transform: none;
+  -webkit-mask-image: url('../images/agricultural-faq-mask.svg');
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: url('../images/agricultural-faq-mask.svg');
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.page-agricultural .project-faq__background-image {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #fff 9.815%, rgba(255,255,255,.38) 27.135%, rgba(255,255,255,0) 39.861%), url('../images/agricultural-faq-background.png') center / cover no-repeat;
+}
+
+.page-agricultural .project-faq__grid {
+  position: relative;
+  z-index: 1;
+}
+
+.page-agricultural .project-faq .faq-item button > img {
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 1025px) {
+  html[dir="rtl"] .page-about .about-who__copy .section-title {
+    height: 116px;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1024px) {
+  .home-about__layout {
+    grid-template-columns: minmax(170px, .75fr) minmax(0, 1.4fr) minmax(170px, .75fr);
+    gap: 24px;
+  }
+
+  .home-about__title {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    font-size: clamp(52px, 5.8vw, 64px);
+  }
+
+  .home-about__perspective {
+    grid-column: 1;
+    grid-row: 2 / span 3;
+  }
+
+  .home-about__agriculture {
+    grid-column: 2;
+    grid-row: 2 / span 3;
+    height: 360px;
+  }
+
+  .home-about__commercial,
+  .home-about__development-label,
+  .home-about__intro,
+  .home-about__story-link {
+    grid-column: 3;
+  }
+
+  .home-about__commercial {
+    grid-row: 2;
+    height: 180px;
+  }
+
+  .home-about__development-label { grid-row: 3; }
+  .home-about__intro { grid-row: 4; }
+  .home-about__story-link { grid-row: 5; }
+
+  .home-features .feature-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .about-vision .section-heading,
+  .about-values .section-heading,
+  .about-principles .section-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(220px, .75fr);
+    gap: 32px;
+    align-items: start;
+    margin-bottom: 40px;
+  }
+
+  .about-vision .section-heading > .lead,
+  .about-values .section-heading > .lead,
+  .about-principles .section-heading > .lead {
+    display: block;
+  }
+
+  .about-vision .vision-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    gap: 24px;
+  }
+
+  .about-vision .vision-card,
+  .about-vision .vision-card:first-child,
+  .about-vision .vision-card:last-child {
+    grid-row: auto;
+    min-height: 0;
+    height: auto;
+    border: 1px solid rgba(255,255,255,.18);
+    background: #05332c;
+  }
+
+  .about-vision .vision-card > img {
+    height: 250px;
+  }
+
+  .about-vision .vision-card__copy {
+    height: auto;
+    margin-top: 0;
+    padding: 20px;
+  }
+
+  .about-values .value-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: none;
+    gap: 16px;
+    height: auto;
+  }
+
+  .about-values .value-card,
+  .about-values .value-card:nth-child(n+3) {
+    height: auto;
+  }
+
+  .about-values .value-card img {
+    height: 170px;
+  }
+
+  .about-values .value-card__copy,
+  .about-values .value-card:nth-child(n+3) .value-card__copy {
+    height: auto;
+    min-height: 220px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page-agricultural .site-card {
+    height: auto;
+    min-height: 290px;
+  }
+
+  .page-agricultural .site-card dl {
+    height: auto;
+  }
+
+  .page-agricultural .site-card dl div {
+    grid-template-columns: minmax(0, 40%) minmax(0, 1fr);
+    height: auto;
+    min-height: 22px;
+    align-items: start;
+    margin-bottom: 8px;
+  }
+
+  .page-agricultural .site-card dt,
+  .page-agricultural .site-card dd {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+html[dir="rtl"] .site-footer .footer-contact {
+  min-width: 0;
+}
+
+html[dir="rtl"] .site-footer .footer-contact p,
+html[dir="rtl"] .site-footer .footer-contact a {
+  width: 100%;
+  min-height: 20px;
+  height: auto;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 561px) {
+  html[dir="rtl"] .site-footer .footer-main {
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 1439px) {
+  html[dir="rtl"] .page-shell.project-intro,
+  html[dir="rtl"] .page-shell.project-intro-gallery__grid,
+  html[dir="rtl"] .page-shell.project-details__grid,
+  html[dir="rtl"] .page-shell.project-gallery__grid,
+  html[dir="rtl"] .page-shell.project-facilities-layout,
+  html[dir="rtl"] .page-shell.project-facility-gallery__grid,
+  html[dir="rtl"] .page-shell.project-faq__grid,
+  html[dir="rtl"] .page-shell.about-who__grid,
+  html[dir="rtl"] .page-shell.contact-hero__inner,
+  html[dir="rtl"] .page-shell.contact-layout {
+    width: min(calc(100% - (2 * var(--page-pad))), 1312px);
+    max-width: 1312px;
+    margin-inline: auto;
   }
 }

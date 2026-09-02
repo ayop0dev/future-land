@@ -1,6 +1,6 @@
 # Future Land — Implementation Checkpoint
 
-Last updated: 1 September 2026
+Last updated: 2 September 2026
 
 ## Objective
 
@@ -125,6 +125,11 @@ TS Safaa was verified for Arabic glyph support before implementing the Arabic ve
 - Added scoped RTL layout and typography rules under `html[dir="rtl"]`, including navigation, hero content, cards, forms, FAQ, CTA sections, footer, mobile menu, directional icons, and select controls.
 - Adapted the Arabic homepage enquiry background to span the full section width at all tested viewport widths.
 - Increased Arabic-only line-height through shared RTL typography rules for large hero headings, section headings, card titles, body copy, buttons/labels, navigation/footer text, FAQ, and form text without changing English typography.
+- Imported Figma-exported masked FAQ background layers and plus icons for both Agricultural and Fuel Station project pages, shared by English and Arabic routes.
+- Corrected the project-gallery background treatment to remain white and repaired mobile agricultural site-card fact rows so long values wrap without collision.
+- Removed inline map URLs from Arabic project copy while retaining their dedicated location links.
+- Tightened the Arabic About-section title-to-copy spacing on desktop.
+- Added stable intermediate `561px–1024px` homepage and About-page layouts: compact desktop compositions, four-column feature/value grids, restored supporting copy, and reset mobile-only card/grid measurements that leaked into laptop widths.
 
 ## Exact Mobile Section Heights Implemented
 
@@ -188,6 +193,9 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Arabic responsive validation passed at 320, 440, 768, 1024, 1280, and 1440px for all Arabic routes with `document.documentElement.scrollWidth <= document.documentElement.clientWidth`, `0` console errors, and no broken assets.
 - Arabic homepage enquiry background validation passed at 320, 440, 768, 1024, 1280, and 1440px with exact full-width section coverage and no horizontal overflow.
 - Arabic-only line-height validation passed across all Arabic routes at 320, 440, 768, 1024, 1280, and 1440px for runtime status, RTL attributes, horizontal overflow, broken assets, and console errors. Visual inspection of the reported fixed-height home project section confirmed no visible clipping or overlap after the line-height pass.
+- Focused Fuel Station Arabic layout review completed against the English Fuel Station page at 320, 375, 440, 768, 1024, 1280, and 1440px. Arabic passed with `dir="rtl"`, no horizontal overflow, no clipped visible text, `0` console errors, and `0` failed assets. Static full-page blank bands were confirmed to be the shared GSAP scroll-reveal start state, not an Arabic-only layout regression; section-by-section scrolled captures rendered correctly.
+- Figma FAQ asset imports were validated with a CSS rebuild, PHP syntax checks, and HTTP `200` responses for both English and Arabic Agricultural/Fuel routes.
+- Homepage and About intermediate-width updates were rebuilt and smoke-checked at both English and Arabic routes with HTTP `200` responses.
 
 ## Git and GitHub Status
 
@@ -201,7 +209,7 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Pushed `main` successfully and set it to track `origin/main`.
 - Verified that the local and remote `main` branches point to the same commit.
 - The first HTTPS upload was reset by the connection; forcing Git to HTTP/1.1 allowed the retry to complete. The repository-local `http.version` remains set to `HTTP/1.1`.
-- Latest pending work before this push: complete Arabic/RTL implementation, Arabic homepage enquiry full-width background adjustment, Arabic-only line-height improvements, rebuilt `assets/css/site.css`, and this checkpoint update.
+- Latest pushed work includes bilingual Agricultural/Fuel Figma FAQ layers, project-copy cleanup, and the intermediate `561px–1024px` Homepage and About responsive fixes.
 
 Repository:
 
