@@ -797,9 +797,10 @@ img { display: block; max-width: 100%; }
 .contact-main fieldset.field { position: relative; display: block; border-bottom: 1px solid #dde0de !important; }
 .contact-main fieldset.field legend { height: 21px; margin-bottom: 16px !important; font-size: 16px !important; }
 .contact-main fieldset.field > div { display: flex; flex-wrap: nowrap; gap: 52px; height: 21px; }
-.contact-main fieldset.field label { display: flex; align-items: center; gap: 10px; white-space: nowrap; font-size: 14px; line-height: 19px; }
-.contact-main fieldset.field input { width: 18px !important; height: 18px; margin: 0; padding: 0; appearance: none; border: 1px solid #05332c; border-radius: 2px; }
-.contact-main fieldset.field input:checked { background: #05332c; box-shadow: inset 0 0 0 3px white; }
+.contact-main fieldset.field label { display: flex; align-items: center; gap: 10px; white-space: nowrap; font-size: 14px; line-height: 19px; cursor: pointer; }
+.contact-main fieldset.field input, .contact-method-input { display: inline-block !important; flex: 0 0 18px !important; width: 18px !important; min-width: 18px !important; max-width: 18px !important; height: 18px !important; min-height: 18px !important; max-height: 18px !important; margin: 0 !important; padding: 0 !important; appearance: none !important; -webkit-appearance: none !important; border: 1.5px solid #05332c !important; border-radius: 2px !important; background-color: transparent !important; cursor: pointer !important; transition: all .15s ease; }
+.contact-main fieldset.field input:checked, .contact-method-input:checked { background: #05332c !important; box-shadow: inset 0 0 0 3px white !important; }
+.contact-main fieldset.field input:focus-visible, .contact-method-input:focus-visible { outline: 2px solid #05332c !important; outline-offset: 2px !important; }
 .contact-main .field--wide { width: 850px; height: 78px; }
 .contact-main .field--wide textarea { width: 850px; height: 41px; padding-bottom: 16px; }
 .contact-main .form-actions { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; width: 850px; height: 58px; margin: 0; }
