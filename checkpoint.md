@@ -130,6 +130,9 @@ TS Safaa was verified for Arabic glyph support before implementing the Arabic ve
 - Removed inline map URLs from Arabic project copy while retaining their dedicated location links.
 - Tightened the Arabic About-section title-to-copy spacing on desktop.
 - Added stable intermediate `561px–1024px` homepage and About-page layouts: compact desktop compositions, four-column feature/value grids, restored supporting copy, and reset mobile-only card/grid measurements that leaked into laptop widths.
+- Replaced isolated laptop safeguards with a shared intermediate-layout system: fluid page gutters and section spacing, content-safe grid tracks, `min-width: 0` boundaries for form/grid children, and content-driven media/section sizing.
+- Kept the desktop composition intact from 1024px through 1439px by preserving the Home three-part About grouping, three-card project arrangement, four-up feature/value groups, balanced two-column content sections, and the desktop footer grid.
+- Set the structural stacking threshold at 900px for footer and content compositions, while retaining the existing 1024px navigation transition where the desktop navigation no longer fits safely.
 
 ## Exact Mobile Section Heights Implemented
 
@@ -196,6 +199,8 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Focused Fuel Station Arabic layout review completed against the English Fuel Station page at 320, 375, 440, 768, 1024, 1280, and 1440px. Arabic passed with `dir="rtl"`, no horizontal overflow, no clipped visible text, `0` console errors, and `0` failed assets. Static full-page blank bands were confirmed to be the shared GSAP scroll-reveal start state, not an Arabic-only layout regression; section-by-section scrolled captures rendered correctly.
 - Figma FAQ asset imports were validated with a CSS rebuild, PHP syntax checks, and HTTP `200` responses for both English and Arabic Agricultural/Fuel routes.
 - Homepage and About intermediate-width updates were rebuilt and smoke-checked at both English and Arabic routes with HTTP `200` responses.
+- Responsive browser-protocol audits passed for all English and Arabic routes. The full 120-check matrix at 320, 440, 600, 768, 860, 900, 1024, 1100, 1200, 1280, 1366, and 1440px reported no horizontal overflow, unusable images, or console errors.
+- Desktop-composition audit passed for all English and Arabic routes at 1024, 1100, 1200, 1280, 1366, and 1440px. The 60-check sweep confirmed no horizontal overflow, broken images, or console errors while preserving desktop grouping and ordering.
 
 ## Git and GitHub Status
 
@@ -209,7 +214,7 @@ Agricultural and Fuel pages also use the individual Figma section heights record
 - Pushed `main` successfully and set it to track `origin/main`.
 - Verified that the local and remote `main` branches point to the same commit.
 - The first HTTPS upload was reset by the connection; forcing Git to HTTP/1.1 allowed the retry to complete. The repository-local `http.version` remains set to `HTTP/1.1`.
-- Latest pushed work includes bilingual Agricultural/Fuel Figma FAQ layers, project-copy cleanup, and the intermediate `561px–1024px` Homepage and About responsive fixes.
+- Latest pushed work includes bilingual Agricultural/Fuel Figma FAQ layers, project-copy cleanup, and the first laptop-responsive layout pass. The pending commit records the shared responsive-system and desktop-composition follow-up.
 
 Repository:
 
