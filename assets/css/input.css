@@ -449,7 +449,7 @@ img { display: block; max-width: 100%; }
 /* Homepage */
 .home-about { height: 665px; padding: 0; overflow: hidden; }
 .home-about__layout { position: relative; height: 665px; }
-.home-about__title { position: absolute; left: 11px; top: 65px; display: flex; flex-direction: column; gap: 15px; width: 579px; margin: 0; color: var(--ink); font-size: 68px; line-height: 68px; font-weight: 400; letter-spacing: 0; text-transform: uppercase; }
+.home-about__title { position: absolute; left: 11px; top: 65px; display: flex; flex-direction: column; gap: 15px; width: 579px; margin: 0; color: var(--ink); font-size: 64px; line-height: 64px; font-weight: 400; letter-spacing: 0; text-transform: uppercase; }
 .home-about__intro { position: absolute; left: 998px; top: 413px; width: 308px; margin: 0; color: var(--muted); font-size: 16px; line-height: 24px; }
 .home-about__agriculture { position: absolute; left: 356px; top: 147px; width: 610px; height: 453px; object-fit: cover; }
 .home-about__perspective { position: absolute; left: 4px; top: 276px; width: 330px; }
